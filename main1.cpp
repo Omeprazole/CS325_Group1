@@ -72,9 +72,12 @@ int main(int argc, char* argv[]) {
 	//Need improved, write the output in a file.
 	int sum;
 	vector<int> subarray;
+	Algorithm_1 algo_1;
+	Algorithm_2 algo_2;
+	Algorithms &algo = algo_1;
 	for(int i = 0; i < rows.size(); i++){
 		printVector(rows[i]);
-		sum = algorithm_1(rows[i], subarray);
+		sum = algo.algorithm(rows[i], subarray);
 		printVector(subarray);
 		cout << "Max sum: " << sum << endl;
 		cout << endl;
