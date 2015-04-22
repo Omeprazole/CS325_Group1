@@ -6,16 +6,38 @@
 
 using namespace std;
 
+class Algorithms{
+	protected:
+		int sum, max_sum;
+		int start_idx, end_idx;
+	public:
+		void set_subarray(vector<int> nums, vector<int> &subarray, int start_idx, int end_idx);
+		virtual int algorithm(vector<int> nums, vector<int> &subarray) { }
+};
+
 //Algorithm 1: Enumeration
-int algorithm_1(vector<int> nums, vector<int> &subarray);
+class Algorithm_1:public Algorithms{
+	public:
+		int algorithm(vector<int> nums, vector<int> &subarray);
+};
+
 
 //Algorithm 2: Better Enumeration
-int algorithm_2(vector<int> nums, vector<int> &subarray);
+class Algorithm_2: public Algorithms{
+	public:
+		int algorithm(vector<int> nums, vector<int> &subarray);
+};
 
 //Algorithm 3: Divide and conquer
-int algorithm_3(vector<int> nums, vector<int> &subarray);
+class Algorithm_3: public Algorithms{
+	public:
+		int algorithm(vector<int> nums, vector<int> &subarray);
+};
 
 //Algorithm 4: Linear-time
-int algorithm_4(vector<int> nums, vector<int> &subarray);
+class Algorithm_4: public Algorithms{
+	public:
+		int algorithm(vector<int> nums, vector<int> &subarray);
+};
 
 #endif
