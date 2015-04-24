@@ -2,9 +2,7 @@
 Apply 4 algorithms
 Input an array, output the subarray with a maximum sum along with the sum
 ******************************************************************************/
-//Need impreved, using virtual funciton
 #include "algorithms.h"
-#include <algorithm>
 
 void  Algorithms::set_subarray(vector<int> nums, vector<int> &subarray, int start_idx, int end_idx){
   subarray.clear();
@@ -14,14 +12,12 @@ void  Algorithms::set_subarray(vector<int> nums, vector<int> &subarray, int star
 }
 
 //Algorithm 1: Enumeration
-//Ianni's attempt
 int Algorithm_1::algorithm(vector<int> nums, vector<int> &subarray){
   max_sum = 0;
   for(int i = 0; i < nums.size(); i++){
     for(int j = i; j < nums.size(); j++){
       sum = 0;
       for(int a = i; a <= j; a++) {
-	//Ni: Revision: i->a
 	sum += nums[a];
       }
       if(sum > max_sum){
@@ -54,7 +50,7 @@ int Algorithm_2::algorithm(vector<int> nums, vector<int> &subarray){
   Algorithms::set_subarray(nums, subarray, start_idx, end_idx);
   return max_sum;
 }
-
+/*
 //Algorithm 3: Divide and conquer
 int Algorithm_3::algorithm(vector<int> nums, vector<int> &subarray){
   int low = 0;
@@ -91,9 +87,32 @@ int Algorithm_3_Helper(vector<int> &array, int low, int high) {
   int crossing_sum = lower_sum + upper_sum;
   
   return max(max(lower_sum, upper_sum), crossing_sum);
-}
-/*
+}*/
+
 //Algorithm 4: Linear-time
 int Algorithm_4::algorithm(vector<int> nums, vector<int> &subarray){
+	int cur_max = nums[0];
+	int left = 0, right = 0;
+	max_sum = nums[0];
+	start_idx = 0;
+	end_idx = 0;
+	for(int i = 1; i < nums.size(); i++){
+		if(cur_max + nums[i] < nums[i]){
+			left = i;
+			right = i;
+			cur_max = nums[i];
+		}else {
+			right = i;
+			cur_max += nums[i];
+		}
 
-}*/
+		if(cur_max > max_sum){
+			max_sum = cur_max;
+			start_idx = left;
+			end_idx = right;
+		}
+	}
+		 
+	Algorithms::set_subarray(nums, subarray, start_idx, end_idx);
+	return max_sum;
+}
