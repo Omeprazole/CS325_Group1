@@ -74,7 +74,9 @@ int main(int argc, char* argv[]) {
 	vector<int> subarray;
 	Algorithm_1 algo_1;
 	Algorithm_2 algo_2;
-	Algorithms &algo = algo_1;
+	Algorithm_3 algo_3;
+	Algorithm_4 algo_4;
+	Algorithms &algo = algo_3;
 	for(int i = 0; i < rows.size(); i++){
 		printVector(rows[i]);
 		sum = algo.algorithm(rows[i], subarray);

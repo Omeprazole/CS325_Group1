@@ -32,6 +32,7 @@ class Algorithm_2: public Algorithms{
 class Algorithm_3: public Algorithms{
 	public:
 		int algorithm(vector<int> nums, vector<int> &subarray);
+		int Algorithm_3_Helper(vector<int> &array, int low, int high);
 };
 
 //Algorithm 4: Linear-time
