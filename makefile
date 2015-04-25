@@ -23,4 +23,5 @@ clean:
 
 cleanall: clean
 	rm prog
+	rm run
 
