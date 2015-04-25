@@ -64,11 +64,7 @@ int main(int argc, char* argv[]) {
 	size = atoi(argv[2]);
 	vector<vector<int> > test_vec;
 	vector<int> subarray;
-	//generateVector(size, test_vec);
-        vector<int> tmp;
-        tmp.push_back(12); tmp.push_back(13);
-        tmp.push_back(44); tmp.push_back(-17);
-        test_vec.push_back(tmp);
+	generateVector(size, test_vec);
 
 	//Run ten times on specific algorithm
 	t1 = getMilliseconds();
@@ -76,23 +72,19 @@ int main(int argc, char* argv[]) {
 	for(int i=0; i < test_vec.size(); i++) {
         	switch(choice){
                 case 1:{
-                        Algorithms &algo = algo_1;
-			algo.algorithm(test_vec[i], subarray);
+			algo_1.algorithm(test_vec[i], subarray);
 		}
 		break;
 		case 2:{
-                        Algorithms &algo = algo_2;
-			algo.algorithm(test_vec[i], subarray);
+			algo_2.algorithm(test_vec[i], subarray);
 		}
 			break;
                 case 3:{
-                        Algorithms &algo = algo_3;
-			algo.algorithm(test_vec[i], subarray);
+			algo_3.algorithm(test_vec[i], subarray);
 		}
 			break;
                 case 4:{
-        	        Algorithms &algo = algo_4;
-			algo.algorithm(test_vec[i], subarray);
+			algo_4.algorithm(test_vec[i], subarray);
 		}
 			break;
                 default:
