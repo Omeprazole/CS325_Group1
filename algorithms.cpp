@@ -1,6 +1,5 @@
 /******************************************************************************
-Apply 4 algorithms
-Input an array, output the subarray with a maximum sum along with the sum
+Apply 4 algorithms to find the max sum subarray
 ******************************************************************************/
 #include "algorithms.h"
 

@@ -18,12 +18,8 @@ double getMilliseconds() {
 	return 1000.0 * clock() / CLOCKS_PER_SEC;
 }
 
-void printVector(vector<int> a){
-        for(int i = 0; i < a.size(); i++)
-                cout << a[i] << " ";
-        cout << endl;
-}
-
+//Generate a 2-dimensional vector, with random numbers
+//which contains 10 vectors of a size 
 void generateVector(const int size, vector<vector<int> > &rand_vec){
 	vector<int> vec;
 	srand(time(NULL));
@@ -62,19 +58,22 @@ int main(int argc, char* argv[]) {
 	
         Algorithm_1 algo_1;
         Algorithm_2 algo_2;
-     //   Algorithm_3 algo_3;
+        Algorithm_3 algo_3;
         Algorithm_4 algo_4;
 	choice = atoi(argv[1]);
 	size = atoi(argv[2]);
 	vector<vector<int> > test_vec;
 	vector<int> subarray;
-	generateVector(size, test_vec);
+	//generateVector(size, test_vec);
+        vector<int> tmp;
+        tmp.push_back(12); tmp.push_back(13);
+        tmp.push_back(44); tmp.push_back(-17);
+        test_vec.push_back(tmp);
 
 	//Run ten times on specific algorithm
 	t1 = getMilliseconds();
 	
-	for(int i=0; i < 10; i++) {
-	//	printVector(test_vec[i]);
+	for(int i=0; i < test_vec.size(); i++) {
         	switch(choice){
                 case 1:{
                         Algorithms &algo = algo_1;
@@ -86,11 +85,11 @@ int main(int argc, char* argv[]) {
 			algo.algorithm(test_vec[i], subarray);
 		}
 			break;
-               /* case 3:{
+                case 3:{
                         Algorithms &algo = algo_3;
 			algo.algorithm(test_vec[i], subarray);
 		}
-			break;*/
+			break;
                 case 4:{
         	        Algorithms &algo = algo_4;
 			algo.algorithm(test_vec[i], subarray);
@@ -98,13 +97,13 @@ int main(int argc, char* argv[]) {
 			break;
                 default:
                         cout << "Error, invalid algorithm choice." << endl;
-        }
+        	}
 		
-	//	printVector(subarray);
 	}	
 	
 	t2 = getMilliseconds();
 
+	//Print out result
 	printf("Time for running algorithm %d on %d elements: %g ms\n", choice, size, (t2 - t1) / 10);
   
 	return 0;

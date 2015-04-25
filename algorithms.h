@@ -14,7 +14,7 @@ class Algorithms{
 		int start_idx, end_idx;
 	public:
 		void set_subarray(vector<int> nums, vector<int> &subarray, int start_idx, int end_idx);
-		virtual int algorithm(vector<int> nums, vector<int> &subarray) { }
+		virtual int algorithm(vector<int> nums, vector<int> &subarray) {}
 };
 
 //Algorithm 1: Enumeration
