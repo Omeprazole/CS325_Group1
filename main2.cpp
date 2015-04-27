@@ -1,7 +1,7 @@
 /******************************************************************************
 Command line insturction: 
-	argument 2: choice of alogrithm(1, 2, 3, 4).
-	argument 3: number of size n.
+	argument 1: choice of alogrithm(1, 2, 3, 4).
+	argument 2: number of size n.
 Description:
 	1, Generate 10 different vectors of size n.
 	2, For each vector,run the algorithm you choose. 
