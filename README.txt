@@ -23,12 +23,12 @@ main2.cpp:
         3, Record and print out the average time of running the algorithm.
 
 makefile:
-	prog: Run this command with only one arugment. This command will run main1.cpp 
+	prog: Run this command with no arugment. This command will run main1.cpp 
 	algorithms.cpp, and will input the array from MSS_Problems.txt file and output 
 	running results from four different algorithms into MSS_Results.txt file.
 
-	run: Run this command with total 3 arguments, the sencond argument is for 
-	choice of alogrithm(1, 2, 3, 4). the third argument is for number of size 
+	run: Run this command with total two arguments, the first argument is for 
+	choice of alogrithm(1, 2, 3, 4). the second argument is for number of size 
 	of a random test array. This command will run main2.cpp and algorithms.cpp
 
 MSS_Problems.txt:
